@@ -1,0 +1,104 @@
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e5e5;
+}
+.wraper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+    padding: 20px;
+    gap: 1.5rem;
+    border: 1px solid lightgray;
+    border-radius: 1rem;
+}
+
+.logo-container {
+    background: blue;
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    margin: 2%;
+}
+.logo-container > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.user-login {
+    width: 30%;
+    margin: 3%;
+    display: grid;
+    grid-template-columns: 1fr, 2fr;
+    gap: 10%;
+    place-content: center;
+}
+.user-login > * {
+    display: flex;
+    align-items: center;
+}
+.user-login > p {
+    font-size: 1.2rem;
+}
+.user-login > input {
+    height: 2rem;
+    width: 12rem;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.user-login > div, .user-login > button {
+    justify-content: center;
+    margin: 1%;
+    grid-column: 1 / span 2;
+}
+.user-login > button {
+    width: 11em;
+    height: 2.5rem;
+    border: none;
+    background-color: #1e90ff;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin: auto;
+}
+.user-login > div {
+    color: rgba(79, 79, 79, .9);
+    justify-content: end;
+    padding: 0 2%;
+}
+
+.api-logos {
+    margin: 2%;
+    padding: 1%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    --border: 1px solid black;
+    border-top: var(--border);
+    border-bottom: var(--border);
+}
+.api-logos > * {
+    cursor: pointer;
+}
+
+footer {
+    color: #0026ffbd;
+    cursor: pointer;
+}
