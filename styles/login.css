@@ -121,7 +121,7 @@ html {
 
 @media (min-width: 1440px) {
     html {
-        font-size: 110%;
+        font-size: 100%;
     }
 }
 @media (min-width: 2560px) {
