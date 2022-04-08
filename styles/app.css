@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+body {
+    min-height: 100vh;
+}
+:root {
+    --color: #1E90FF;
+}
+
+header .navbar {
+    width: 100%;
+    height: 100px;
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 2px solid rgba(0,0,0,.3);
+    box-shadow: 0 0 4px gray;
+}
+header .navbar .img-container {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color);
+    color: white;
+    border-radius: 5px;
+}
+header .navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+header .navbar ul li {
+    margin: 0 0 0 30px;
+    color: var(--color);
+    cursor: pointer;
+}
+header .navbar ul li:nth-last-child(1){
+    height: 40px;
+    width: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: white;
+    background-color: var(--color);
+
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.3);
+}
+header .navbar ul li span {
+    margin-left: 10px;
+}
+
+main {
+    display: flex;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+main .circle-graphic {
+    position: relative;
+    background-color: red;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+main .circle-graphic::before {
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 75%;
+    width: 75%;
+    border-radius: 50%;
+}
+main .circle-graphic .value {
+    color: black;
+    z-index: 1;
+}
