@@ -3,7 +3,7 @@ value = document.getElementById('progressValue')
 
 const progressSpeed = 15; //Speed in ms
 let progressValue = 0;
-let progressValueEnd = 30; // Value in percent
+let progressValueEnd = 30; //Value in percent
 
 progress = setInterval(() => {
     value.textContent = `${progressValue}`
