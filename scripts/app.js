@@ -5,8 +5,8 @@ const elementUtilCapacity = document.getElementById('utilizedCapacity')
 
 const progressSpeed = 15; //Speed in ms
 let progressValue = 0;
-let progressValueEnd = 40; //Value in percent
-let totalCapacity = 5000; //Total capacity of the container in liters
+let progressValueEnd = 30; //Value in percent
+let totalCapacity = 6000; //Total capacity of the container in liters
 
 progress = setInterval(() => {
     value.textContent = `${progressValue}`
