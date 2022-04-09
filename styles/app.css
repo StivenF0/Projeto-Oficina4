@@ -74,8 +74,15 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding-top: 30px;
     padding-left: 20px;
+    overflow: hidden;
+}
+main .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 main > * {
     transform: translateY(-50px);
@@ -133,6 +140,25 @@ main .buttons button:hover {
     background-color: var(--secondary-color);
     color: cornflowerblue;
 }
-main > div:nth-child(2) {
-    break-after: flex;
+
+main .capacity {
+    margin-top: 40px;
+}
+main .capacity .info table {
+    width: 500px;
+    /* border-collapse: collapse; */
+}
+main .capacity .info table thead th,
+main .capacity .info table tbody td {
+    /* border-bottom: 1px solid #fff; */
+    text-align: center;
+    padding: 10px;
+}
+main .capacity .info table thead th {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+main .capacity .info table tbody td {
+    background-color: var(--secondary-color);
+    font-weight: 600;
 }

@@ -21,15 +21,30 @@
         </nav>
     </header>
     <main>
-        <div class="circle-graphic" id="progressBar">
-            <div class="value" id="progressValue"></div>
+        <div class="row">
+            <div class="circle-graphic" id="progressBar">
+                <div class="value" id="progressValue"></div>
+            </div>
+            <div class="buttons">
+                <button>Atualizar</button>
+                <button>Imprimir</button>
+            </div>
         </div>
-        <div class="buttons">
-            <button>Atualizar</button>
-            <button>Imprimir</button>
-        </div>
-        <div class="info">
-            <h3>Capacidade</h3>
+        <div class="row capacity">
+            <div class="info">
+                <table>
+                    <thead>
+                        <th>Capacidade Total</th>
+                        <th>Capacidade Utilizada</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="totalCapacity"></td>
+                            <td id="utilizedCapacity"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 </body>

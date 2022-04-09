@@ -1,9 +1,12 @@
-progressBar = document.getElementById('progressBar')
-value = document.getElementById('progressValue')
+const progressBar = document.getElementById('progressBar')
+const value = document.getElementById('progressValue')
+const elementCapacity = document.getElementById('totalCapacity')
+const elementUtilCapacity = document.getElementById('utilizedCapacity')
 
 const progressSpeed = 15; //Speed in ms
 let progressValue = 0;
-let progressValueEnd = 30; //Value in percent
+let progressValueEnd = 40; //Value in percent
+let totalCapacity = 5000; //Total capacity of the container in liters
 
 progress = setInterval(() => {
     value.textContent = `${progressValue}`
@@ -18,5 +21,6 @@ progress = setInterval(() => {
     }
 }, progressSpeed)
 
-obj = document.querySelector('main > div:nth-child(2)')
-console.log(obj)
+elementCapacity.textContent = `${totalCapacity} L`
+elementUtilCapacity.textContent = `${totalCapacity * progressValueEnd / 100} L`
+
