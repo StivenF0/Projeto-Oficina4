@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles\app.css">
+    <title>WaterView</title>
+    <link rel="stylesheet" href="styles/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./scripts/app.js" defer></script>
 </head>
 <body>
     <header>
@@ -20,8 +21,15 @@
         </nav>
     </header>
     <main>
-        <div class="circle-graphic">
-            <div class="value">50%</div>
+        <div class="circle-graphic" id="progressBar">
+            <div class="value" id="progressValue"></div>
+        </div>
+        <div class="buttons">
+            <button>Atualizar</button>
+            <button>Imprimir</button>
+        </div>
+        <div class="info">
+            <h3>Capacidade</h3>
         </div>
     </main>
 </body>
