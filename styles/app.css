@@ -1,72 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-body {
-    min-height: 100vh;
-}
-:root {
-    --primary-color: #1E90FF;
-    --secondary-color: #a3d1ff;
-
-    --navbar-height: 100px;
-}
-
-header .navbar {
-    width: 100%;
-    height: var(--navbar-height);
-    padding: 0 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    border-bottom: 2px solid rgba(0,0,0,.3);
-    box-shadow: 0 0 4px gray;
-}
-header .navbar .img-container {
-    width: 80px;
-    height: 80px;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 5px;
-}
-header .navbar ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
-header .navbar ul li {
-    margin: 0 0 0 30px;
-    color: var(--primary-color);
-    cursor: pointer;
-}
-header .navbar ul li:nth-last-child(1){
-    height: 40px;
-    width: 90px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    color: white;
-    background-color: var(--primary-color);
-
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px rgba(0,0,0,.3);
-    transition: 120ms;
-}
-header .navbar ul li:nth-last-child(1):hover {
-    transform: translateY(-15%);
-}
-header .navbar ul li span {
-    margin-left: 10px;
-}
+@charset "UTF-8";
 
 main {
     width: 100%;
@@ -79,14 +11,17 @@ main {
     padding-left: 20px;
     overflow: hidden;
 }
+
 main .row {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 main > * {
     transform: translateY(-50px);
 }
+
 main .circle-graphic {
     position: relative;
     height: 250px;
@@ -96,6 +31,7 @@ main .circle-graphic {
     align-items: center;
     justify-content: center;
 }
+
 main .circle-graphic::before {
     content: "";
     position: absolute;
@@ -125,6 +61,7 @@ main .buttons {
     grid-gap: 10px;
     align-items: center;
 }
+
 main .buttons button {
     height: 50px;
     border: none;
@@ -136,6 +73,7 @@ main .buttons button {
     cursor: pointer;
     transition: 200ms;
 }
+
 main .buttons button:hover {
     background-color: var(--secondary-color);
     color: cornflowerblue;
@@ -144,20 +82,24 @@ main .buttons button:hover {
 main .capacity {
     margin-top: 40px;
 }
+
 main .capacity .info table {
     width: 500px;
     /* border-collapse: collapse; */
 }
+
 main .capacity .info table thead th,
 main .capacity .info table tbody td {
     /* border-bottom: 1px solid #fff; */
     text-align: center;
     padding: 10px;
 }
+
 main .capacity .info table thead th {
     background-color: var(--primary-color);
     color: #fff;
 }
+
 main .capacity .info table tbody td {
     background-color: var(--secondary-color);
     font-weight: 600;

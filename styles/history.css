@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+h1 {
+    font-family: 'Inter', sans-serif;
+    color: var(--primary-color);
+    margin: 2% 0 0 6%;
+}
+
+.month-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.month-options label {
+    margin-right: .5%;
+}
+
+.div-main {
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.history-chart {
+    width: 600px;
+    height: 300px;
+    margin-right: 1%;
+}
+
+.div-main h2 {
+    font-size: 1em;
+    color: var(--primary-color);
+    font-weight: 400;
+}
+
+.chart-info {
+    display: grid;
+    grid-gap: 10%;
+    align-items: center;
+}
+
+.chart-info button {
+    height: 50px;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.chart-info button:hover {
+    background-color: var(--secondary-color);
+    color: cornflowerblue;
+}
+
+
+/* ** SCREEN MAX-WIDTH 800PX ** */
+@media screen and (max-width: 800px) {
+    .div-main {
+        display: block;
+    }
+
+    .history-chart {
+        margin: auto auto 5% auto;
+    }
+
+    .chart-info {
+        display: block;
+        margin: auto;
+        width: 25%;
+    }
+
+    .chart-info h2 {
+        margin-bottom: 5%;
+    }
+
+    .chart-info button {
+        margin-top: 20%;
+        width: 100%;
+    }
+}
+
+/* ** SCREEN MAX-WIDTH 600PX ** */
+@media screen and (max-width: 600px) {
+    .history-chart {
+        width: 90%;
+        height: 250px;
+        margin: auto auto 3% auto;
+    }
+
+    .chart-info {
+        width: 30%;
+    }
+}
+
+/* ** SCREEN MAX-WIDTH 500PX ** */
+@media screen and (max-width: 500px) {
+    .history-chart {
+        height: 200px;
+        margin-bottom: 5%;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 5% auto auto auto;
+    }
+}
+
+/* ** SCREEN MAX-WIDTH 400PX ** */
+@media screen and (max-width: 400px) {
+    .history-chart {
+        height: 150px;
+    }
+
+    .chart-info {
+        width: 45%;
+        margin-top: 12%;
+    }
+}
+
+/* ** SCREEN MAX-WIDTH 300PX ** */
+@media screen and (max-width: 300px) {
+    .history-chart {
+        height: 100px;
+    }
+
+    .chart-info {
+        width: 60%;
+    }
+}
