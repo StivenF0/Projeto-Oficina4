@@ -70,11 +70,8 @@ form p {
     width: 100%;
     padding: 2%;
     font-size: 1em;
-    outline: none;
-}
-
-#user-p option {
-    padding: 4%;
+    outline-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 
 form input[type="submit"] {

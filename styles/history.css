@@ -7,13 +7,16 @@ h1 {
 }
 
 .month-options {
-    display: flex;
-    justify-content: center;
-    margin-top: 3%;
+    width: 20%;
+    margin: 5% auto auto auto;
 }
 
-.month-options label {
-    margin-right: .5%;
+.month-options select {
+    width: 100%;
+    padding: 2%;
+    font-size: 1em;
+    outline-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 
 .div-main {
@@ -57,7 +60,6 @@ h1 {
     background-color: var(--secondary-color);
     color: cornflowerblue;
 }
-
 
 /* ** SCREEN MAX-WIDTH 800PX ** */
 @media screen and (max-width: 800px) {
