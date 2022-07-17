@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <!-- BASIC META -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- RESPONSIVE META -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- APP INFO -->
+        <meta name="author" content="Acsa Cibelly Carvalho Bezerra, Eduardo Aquino da Silva, Stiven Felipe Câmara Fonseca">
+        
+        <!-- PAGE TITLE -->
+        <title>Tank Register - WaterView</title>
+
+        <!-- APP ICON -->
+
+        <!-- CSS STYLESHEETS -->
+        <link rel="stylesheet" href="styles/header.css">
+        <link rel="stylesheet" href="styles/tank-register.css">
+
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="img-container">Img</div>
+                <ul class="links">
+                    <li><i class="fa fa-calendar-o" aria-hidden="true"></i> <a href="./">Página Inicial</a> </li>
+                    <li><i class="fa fa-calendar-o" aria-hidden="true"></i> <a href="history.html">Histórico Mensal</a> </li>
+                    <li><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span><a href="">Perfil</a></span></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Cadastro de reservatório</h1>
+
+            <form action="" method="POST">
+                <div class="form-part-one">
+                    <p><input type="text" placeholder=" " id="idNumber" name="" class="inputs"><label for="idNumber">Número de série </label></p>
+                    <p><input type="number" min="1" id="idCapacity" name="" class="inputs" placeholder=" "><label for="idCapacity">Capacidade (L) </label></p>
+                </div>
+
+                <p id="user-p">
+                    <!-- with php and database this will be different -->
+                    <select name="" id="idSel">
+                        <option value="default" disabled selected id="selected">Selecione o usuário</option>
+                        <option value="">Usuário 1</option>
+                        <option value="">Usuário 2</option>
+                        <option value="">Usuário 3</option>
+                        <option value="">Usuário 4</option>
+                        <option value="">Usuário 5</option>
+                    </select>
+                </p>
+
+                <input type="submit" value="Cadastrar" id="subBtn" disabled>
+            </form>
+        </main>
+
+        <script>
+            const inputNumber = document.querySelector('#idNumber')
+            const inputCapacity = document.querySelector('#idCapacity')
+            const selectElement = document.querySelector("#idSel")
+            const submitButton = document.querySelector('#subBtn')
+
+            inputCapacity.addEventListener('input', validateForm)
+            inputNumber.addEventListener('input', validateForm)
+            selectElement.addEventListener('change', validateForm)
+
+            function validateForm() {
+                const selectedOption = selectElement.options[selectElement.selectedIndex].value
+                if (inputNumber.value.length > 0 && inputCapacity.value.length > 0 && selectedOption != "default") {
+                    submitButton.disabled = false
+                    submitButton.style.background = "#1e90ff"
+                    submitButton.style.color = "#fff"
+                    submitButton.style.cursor = "pointer"
+
+                    submitButton.onmouseenter = () => submitButton.style.background = "#66b3ff"
+                    submitButton.onmouseleave = () => submitButton.style.background = "#1e90ff"
+                } else {
+                    submitButton.disabled = true
+                    submitButton.style.background = "#a3d1ff"
+                    submitButton.style.color = "cornflowerblue"
+                    submitButton.style.cursor = "default"
+                }
+            }
+        </script>
+    </body>
+</html>
