@@ -71,7 +71,6 @@ form p {
     padding: 2%;
     font-size: 1em;
     outline-color: var(--primary-color);
-    border: 1px solid var(--primary-color);
 }
 
 form input[type="submit"] {
@@ -81,9 +80,9 @@ form input[type="submit"] {
     font-size: 20px;
     font-weight: 500;
     border-radius: 10px;
-    background-color: var(--primary-color);
-    color: #fff;
-    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: cornflowerblue;
+    cursor: default;
     transition: 200ms;
     padding: 0%;
     display: flex;
@@ -91,12 +90,6 @@ form input[type="submit"] {
     align-items: center;
     margin: 25% auto auto auto;
 }
-
-form input[type="submit"]:hover {
-    background-color: var(--secondary-color);
-    color: cornflowerblue;
-}
-
 
 /* ** SCREEN MAX-WIDTH 1400PX ** */
 @media screen and (max-width: 1400px) {
