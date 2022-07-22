@@ -1,0 +1,35 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+body {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+:root {
+    --primary-color: #1e90ff;
+    --secondary-color: #a3d1ff;
+}
+
+.form {
+    padding: 5%;
+    border: 0.0625rem solid rgba(0,0,0,0.3);
+    border-radius: 1.2rem;
+    font-size: large;
+}
+.form div {
+    margin: 0 8%;
+}
+.form h1 {
+    color: var(--primary-color);
+    margin-bottom: 5%;
+}
+.form input[type="text"],
+.form input[type="password"] {
+    background: none;
+    border: none;
+    border-bottom: 0.0625rem solid rgba(0,0,0,0.3);
+}
