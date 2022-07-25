@@ -43,6 +43,7 @@
                 <div class="form-part-one">
                     <p><input type="text" placeholder=" " id="idNumber" name="" class="inputs"><label for="idNumber">Número de série </label></p>
                     <p><input type="number" min="1" id="idCapacity" name="" class="inputs" placeholder=" "><label for="idCapacity">Capacidade (L) </label></p>
+                    <p><input type="text" placeholder=" " id="idDimensions" name="" class="inputs"><label id="dimensionsLabel" for="idDimensions">Dimensões (C x L x H)</label></p>
                 </div>
 
                 <p id="user-p">
@@ -62,18 +63,22 @@
         </main>
 
         <script>
-            const inputNumber = document.querySelector('#idNumber')
-            const inputCapacity = document.querySelector('#idCapacity')
-            const selectElement = document.querySelector("#idSel")
-            const submitButton = document.querySelector('#subBtn')
+            const inputNumber = document.getElementById('idNumber')
+            const inputCapacity = document.getElementById('idCapacity')
+            const inputDimensions = document.getElementById('idDimensions')
+            const dimensionsLabel = document.getElementById('dimensionsLabel')
+            const selectElement = document.getElementById("idSel")
+            const submitButton = document.getElementById('subBtn')
 
             inputCapacity.addEventListener('input', validateForm)
             inputNumber.addEventListener('input', validateForm)
+            inputDimensions.addEventListener('input', validateForm)
+            inputDimensions.addEventListener('input', validateDimension)
             selectElement.addEventListener('change', validateForm)
 
             function validateForm() {
                 const selectedOption = selectElement.options[selectElement.selectedIndex].value
-                if (inputNumber.value.length > 0 && inputCapacity.value.length > 0 && selectedOption != "default") {
+                if (inputNumber.value.length > 0 && inputCapacity.value.length > 0 && selectedOption != "default" && dimensionRegExIsValid(inputDimensions.value)) {
                     submitButton.disabled = false
                     submitButton.style.background = "#1e90ff"
                     submitButton.style.color = "#fff"
@@ -86,6 +91,21 @@
                     submitButton.style.background = "#a3d1ff"
                     submitButton.style.color = "cornflowerblue"
                     submitButton.style.cursor = "default"
+                }
+            }
+
+            function dimensionRegExIsValid(dimension) {
+                let dimensionRegEx = /[\d]{1,3}[x][\d]{1,3}[x][\d]{1,3}/i;
+                return dimensionRegEx.test(dimension)
+            }
+
+            function validateDimension() {
+                if (dimensionRegExIsValid(inputDimensions.value)) {
+                    inputDimensions.style.borderBottom = "2px solid #1e90ff"
+                    dimensionsLabel.style.color = "#1e90ff"
+                } else {
+                    inputDimensions.style.borderBottom = "2px solid #f11515"
+                    dimensionsLabel.style.color = "#f11515"
                 }
             }
         </script>
