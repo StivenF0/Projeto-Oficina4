@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fazer Login</title>
     <link rel="stylesheet" href="login.css">
+    <script src="login.js" defer></script>
 </head>
 <body>
     <form class="form" action="">
@@ -13,13 +14,18 @@
             <h1>Login</h1>
         </div>
         <div>
-            <label>Usuário</label><input type="text">
+            <input type="text" id="user" placeholder=" ">
+            <label for="user">Usuário</label>
         </div>
         <div>
-            <label>Senha</label><input type="password">
+            <input type="password" id="password" placeholder=" ">
+            <label for="password">Senha</label>
+            <input type="checkbox" id="passToggle">
+            <label for="passToggle"></label>
         </div>
         <div>
-            <input type="checkbox" id="check"><label for="check">Manter conectado</label>
+            <input type="checkbox" id="check">
+            <label for="check">Manter conectado</label>
         </div>
         <div>
             <input type="submit" value="Entrar">
