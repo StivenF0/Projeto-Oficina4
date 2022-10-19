@@ -14,8 +14,8 @@ body {
 }
 
 :root {
-    --primary-color: #1e90ff;
-    --secondary-color: #a3d1ff;
+    --primary-color: hsl(198, 50%, 44%);
+    --secondary-color: hsl(198, 100%, 44%);
 
     --navbar-height: 100px;
 }
@@ -34,11 +34,17 @@ header .navbar {
 }
 
 header .navbar .img-container {
-    width: 80px;
-    height: 80px;
-    background-color: var(--primary-color);
+    width: 150px;
+    height: 150px;
+    /* background-color: var(--primary-color); */
+
     color: white;
     border-radius: 5px;
+}
+
+.img-container > img {
+    width: 100%;
+    object-fit: cover;
 }
 
 header .navbar ul {
