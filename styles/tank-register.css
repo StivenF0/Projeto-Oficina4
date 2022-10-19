@@ -62,15 +62,20 @@ form p {
     margin: 0;
 }
 
-#user-p {
-    margin-top: 5%;
+.user-p {
+    margin-top: 0%;
+    margin-bottom: 10%;
 }
 
-#user-p select {
+.user-p select {
     width: 100%;
     padding: 2%;
     font-size: 1em;
     outline-color: var(--primary-color);
+}
+
+.part-two {
+    display: none;
 }
 
 form input[type="submit"] {

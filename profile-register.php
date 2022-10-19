@@ -39,20 +39,20 @@
         <main>
             <h1>Cadastro de perfil</h1>
 
-            <form action="" method="POST">
+            <form action="profile-register-back.php" method="POST">
                 <div class="form-part-one">
-                    <p><input type="text" placeholder=" " id="profile-name" name="" class="inputs"><label for="profile-name">Nome</label></p>
-                    <p><input type="number" min="1" id="password" name="" class="inputs" placeholder=" "><label for="password">Senha</label></p>
+                    <p><input type="text" placeholder=" " id="profile-name" name="nName" class="inputs"><label for="profile-name">Nome</label></p>
+                    <p><input type="password" min="1" id="password" name="nPasswd" class="inputs" placeholder=" "><label for="password">Senha</label></p>
                     
-                    <p><input type="text" placeholder=" " id="profile-email" name="" class="inputs"><label id="emailLabel" for="profile-email">E-mail</label></p>
+                    <p><input type="email" placeholder=" " id="profile-email" name="nEmail" class="inputs"><label id="emailLabel" for="profile-email">E-mail</label></p>
                 </div>
 
                 <p id="user-p">
                     <!-- with php and database this will be different -->
-                    <select name="" id="idSel">
+                    <select name="nType" id="idSel">
                         <option value="default" disabled selected id="selected">Tipo de usuário</option>
-                        <option value="">Administrador</option>
-                        <option value="">Comum</option>
+                        <option value="admin">Administrador</option>
+                        <option value="comum">Comum</option>
                     </select>
                 </p>
 
@@ -61,22 +61,24 @@
         </main>
 
         <script>
-            const inputNumber = document.getElementById('profile-name')
-            const inputCapacity = document.getElementById('password')
-            const inputDimensions = document.getElementById('profile-email')
+            // Still need to make sure everything is okay
+
+            const inputName = document.getElementById('profile-name')
+            const inputPassword = document.getElementById('password')
+            const inputEmail = document.getElementById('profile-email')
             const emailLabel = document.getElementById('emailLabel')
             const selectElement = document.getElementById("idSel")
             const submitButton = document.getElementById('subBtn')
 
-            inputCapacity.addEventListener('input', validateForm)
-            inputNumber.addEventListener('input', validateForm)
-            inputDimensions.addEventListener('input', validateForm)
-            inputDimensions.addEventListener('input', validateDimension)
+            inputName.addEventListener('input', validateForm)
+            inputPassword.addEventListener('input', validateForm)
+            inputEmail.addEventListener('input', validateForm)
+            inputEmail.addEventListener('input', validateEmail)
             selectElement.addEventListener('change', validateForm)
 
             function validateForm() {
                 const selectedOption = selectElement.options[selectElement.selectedIndex].value
-                if (inputNumber.value.length > 0 && inputCapacity.value.length > 0 && selectedOption != "default" && dimensionRegExIsValid(inputDimensions.value)) {
+                if (inputNam.value.length > 0 && inputPassword.value.length > 0 && selectedOption != "default" && dimensionRegExIsValid(inputEmail.value)) {
                     submitButton.disabled = false
                     submitButton.style.background = "#1e90ff"
                     submitButton.style.color = "#fff"
@@ -98,11 +100,11 @@
             }
 
             function validateDimension() {
-                if (dimensionRegExIsValid(inputDimensions.value)) {
-                    inputDimensions.style.borderBottom = "2px solid #1e90ff"
+                if (dimensionRegExIsValid(inputEmail.value)) {
+                    inputEmail.style.borderBottom = "2px solid #1e90ff"
                     emailLabel.style.color = "#1e90ff"
                 } else {
-                    inputDimensions.style.borderBottom = "2px solid #f11515"
+                    inputEmail.style.borderBottom = "2px solid #f11515"
                     emailLabel.style.color = "#f11515"
                 }
             }
