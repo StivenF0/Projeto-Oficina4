@@ -84,7 +84,7 @@ main .capacity {
 }
 
 main .capacity .info table {
-    width: 500px;
+    width: 39vw;
     /* border-collapse: collapse; */
 }
 
@@ -103,4 +103,22 @@ main .capacity .info table thead th {
 main .capacity .info table tbody td {
     background-color: var(--secondary-color);
     font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 510px) {
+    main {
+        padding-left: 0;
+        padding-top: 80px;
+    }
+    main .row {
+        flex-direction: column;
+    }
+    main .row .buttons {
+        width: 200px;
+        margin: 15px 0 0 0;
+    }
+    main .row .buttons button {
+        height: 35px;
+    }
 }

@@ -14,8 +14,11 @@ body {
 }
 
 :root {
-    --primary-color: hsl(198, 50%, 44%);
-    --secondary-color: hsl(198, 100%, 44%);
+    /* --primary-color: hsl(198, 50%, 44%);
+    --secondary-color: hsl(198, 100%, 44%); */
+
+    --primary-color: #009bdf;;
+    --secondary-color: #a3d1ff;
 
     --navbar-height: 100px;
 }
@@ -43,7 +46,7 @@ header .navbar .img-container {
 }
 
 .img-container > img {
-    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -68,19 +71,17 @@ header .navbar ul li:nth-last-child(1){
     align-items: center;
     justify-content: center;
     
-    color: white;
     background-color: var(--primary-color);
 
     border-radius: 10px;
     box-shadow: 3px 3px 3px rgba(0,0,0,.3);
     transition: 120ms;
 }
+header .navbar ul li:nth-last-child(1) > * {
+    color: white;
+}
 header .navbar ul li:nth-last-child(1):hover {
     transform: translateY(-15%);
-}
-
-header .navbar ul li span {
-    margin-left: 10px;
 }
 
 header .navbar ul li a {
@@ -90,4 +91,30 @@ header .navbar ul li a {
 
 header .navbar ul li span a {
     color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 535px) {
+    header .navbar ul li:last-child {
+        width: 45px;
+        margin-left: 20px;
+    }
+
+    header .navbar ul li i{
+        font-size: 1.3rem;
+    }
+
+    header .navbar ul li span {
+        display: none;
+    }
+}
+@media (max-width: 430px) {
+    header .navbar {
+        padding: 0 20px;
+    }
+}
+@media (max-width: 280px) {
+    header .navbar {
+        padding: 0 10px;
+    }
 }

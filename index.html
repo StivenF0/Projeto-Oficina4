@@ -19,7 +19,7 @@
 
         <!-- CSS STYLESHEETS -->
         <link rel="stylesheet" href="styles/header.css">
-        <link rel="stylesheet" href="styles/app.css">
+        <link rel="stylesheet" href="styles/index.css">
 
         <!-- FONT AWESOME -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -35,8 +35,17 @@
                     <img src="img/waterview-logo.svg" alt="">
                 </div>
                 <ul class="links">
-                    <li><i class="fa fa-calendar-o" aria-hidden="true"></i> <a href="history.html">Histórico Mensal</a></li>
-                    <li><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span><a href="">Perfil</a></span></li>
+                    <li>
+                        <a href="history.html">
+                            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                            <span>Histórico Mensal</span> 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> <span>Perfil</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -45,6 +54,7 @@
                 <div class="circle-graphic" id="progressBar">
                     <div class="value" id="progressValue"></div>
                 </div>
+                
                 <div class="buttons">
                     <button>Atualizar</button>
                     <button>Imprimir</button>

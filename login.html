@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Fazer Login</title>
     <link rel="stylesheet" href="styles/login.css">
+    <script src="scripts/login.js" defer></script>
 </head>
 <body>
-    <main class="wrapper">
-        <h2 class="title">Fazer Login</h2>
-        <div class="img-container">imagem</div>
-        <div class="login">
-            <p>Email:</p> <input type="email" name="" id="">
-            <p>Senha:</p> <input type="password" name="" id="">
+    <form class="form" action="">
+        <div>
+            <h1>Login</h1>
         </div>
-        <div class="pass-forget">
-            Esqueci a senha.
+        <div>
+            <input type="text" id="user" placeholder=" ">
+            <label for="user">Usuário</label>
         </div>
-        <div class="login-button">
-            <button>Login</button>
+        <div>
+            <input type="password" id="password" placeholder=" ">
+            <label for="password">Senha</label>
+            <input type="checkbox" id="passToggle">
+            <label for="passToggle"></label>
         </div>
-        <div class="register">
-            <p>Não tem uma conta? Cadastre-se.</p>
+        <div>
+            <input type="checkbox" id="check">
+            <label for="check">Manter conectado</label>
         </div>
-    </main> 
+        <div>
+            <input type="submit" value="Entrar">
+        </div>
+    </form>
 </body>
 </html>
