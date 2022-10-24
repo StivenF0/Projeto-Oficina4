@@ -39,13 +39,13 @@
                     <img src="img/waterview-logo.svg" alt="">
                 </div>
                 <ul class="links">
-                    <li>
+                    <li class="underline">
                         <a href="index.html">
                             <i class="fa fa-home" aria-hidden="true"></i>
                             <span>Página Inicial</span> 
                         </a>
                     </li>
-                    <li>
+                    <li class="underline">
                         <a href="history.html">
                             <i class="fa fa-calendar-o" aria-hidden="true"></i>
                             <span>Histórico Mensal</span> 
