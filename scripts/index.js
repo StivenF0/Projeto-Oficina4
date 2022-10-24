@@ -23,4 +23,3 @@ progress = setInterval(() => {
 
 elementCapacity.textContent = `${totalCapacity} L`
 elementUtilCapacity.textContent = `${totalCapacity * progressValueEnd / 100} L`
-
