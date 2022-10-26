@@ -104,6 +104,13 @@ body {
     font-weight: 400;
 }
 
+/* ERROR MESSAGE */
+.error {
+    color: red;
+    font-size: .9em;
+    text-align: center;
+}
+
 /* Send button styling */
 .form input[type="submit"] {
     width: 100%;
