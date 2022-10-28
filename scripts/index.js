@@ -5,15 +5,12 @@ const elementUtilCapacity = document.getElementById('utilizedCapacity')
 
 const progressSpeed = 15 //Speed in ms
 let progressValue = 0
-let progressValueEnd = 30 //Value in percent
+let progressValueEnd = 100 //Value in percent
 let totalCapacity = 6000 //Total capacity of the container in liters
 
 progress = setInterval(() => {
     value.textContent = `${progressValue}`
-    progressBar.style.background = `conic-gradient(
-        var(--primary-color) ${progressValue * 3.6}deg,
-        var(--secondary-color) ${progressValue * 3.6}deg
-    )`
+    progressBar.style.setProperty("--volume-percent", ` ${progressValue}%`)
     if (progressValue === progressValueEnd) {
         clearInterval(progress)
     } else {
