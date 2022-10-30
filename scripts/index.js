@@ -1,3 +1,4 @@
+// Chart
 const progressBar = document.getElementById('progressBar')
 const value = document.getElementById('progressValue')
 const elementCapacity = document.getElementById('totalCapacity')
@@ -8,10 +9,10 @@ let number;
 let oldNumber = 0;
 const progressSpeed = 1 //Speed in ms
 $(document).ready(function(){
-    $('#div-refresh').load('php/update-volume.php');
-    $('#div-refresh').load('php/update-volume.php');
+    $('#div-refresh').load('back/update-volume.php');
+    $('#div-refresh').load('back/update-volume.php');
     setInterval(function() {
-        $('#div-refresh').load('php/update-volume.php');
+        $('#div-refresh').load('back/update-volume.php');
         number = $('#div-refresh').html();
         let progressValue = 0
         let progressValueEnd = Number(number) //Value in percent
@@ -37,3 +38,12 @@ $(document).ready(function(){
         }
     }, 1000);
 })
+
+// Buttons On and Off
+function turnOn() {
+    jQuery.post('back/write-data.php', {data: 1})
+}
+
+function turnOff() {
+    jQuery.post('back/write-data.php', {data: 0})
+}
