@@ -1,3 +1,4 @@
+// Chart
 const progressBar = document.getElementById('progressBar')
 const value = document.getElementById('progressValue')
 const elementCapacity = document.getElementById('totalCapacity')
@@ -23,3 +24,12 @@ progress = setInterval(() => {
 
 elementCapacity.textContent = `${totalCapacity} L`
 elementUtilCapacity.textContent = `${totalCapacity * progressValueEnd / 100} L`
+
+// Buttons On and Off
+function turnOn() {
+    jQuery.post('back/write-data.php', {data: 1})
+}
+
+function turnOff() {
+    jQuery.post('back/write-data.php', {data: 0})
+}

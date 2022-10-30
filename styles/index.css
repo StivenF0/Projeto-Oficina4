@@ -62,6 +62,14 @@ main .buttons {
     align-items: center;
 }
 
+.btn-on-off {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
 main .buttons button {
     height: 50px;
     border: none;
@@ -74,7 +82,21 @@ main .buttons button {
     transition: 200ms;
 }
 
-main .buttons button:hover {
+.btn-on-off button {
+    padding: 5%;
+    width: 40%;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+main .buttons button:hover,
+main .btn-on-off button:hover {
     background-color: var(--secondary-color);
     color: cornflowerblue;
 }

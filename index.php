@@ -86,6 +86,11 @@
                     </table>
                 </div>
             </div>
+
+            <div class="btn-on-off">
+                <button onclick="turnOn()">Ligar</button>
+                <button onclick="turnOff()">Desligar</button>
+            </div>
         </main>
     </body>
 </html>
