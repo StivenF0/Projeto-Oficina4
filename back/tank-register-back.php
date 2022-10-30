@@ -15,7 +15,7 @@
         header('Location: ../tank-register.php');
     }
 
-    require('conection.php');
+    include 'connection.php';
 
     try {
         $sql = $pdo->query("INSERT INTO tanks(id, serial_number, capacity, dimensions) VALUES (default, '" . $_POST['nNumber'] . "', '" . $_POST['nCap'] . "', '" . $dimensions . "')");

@@ -1,13 +1,13 @@
 <?php
     session_start();
 
-    $activeSession = !empty($_SESSION['activeSession']) ? $_SESSION['activeSession'] : false;
+    $activeSession = (!empty($_SESSION['activeSession'])) ? $_SESSION['activeSession'] : false;
 
     if ($activeSession) {
         header('Location: index.html');
     }
 
-    $error = !empty($_SESSION['error']) ? $_SESSION['error'] : false;
+    $error = (!empty($_SESSION['error'])) ? $_SESSION['error'] : false;
 ?>
 
 <!DOCTYPE html>
@@ -21,16 +21,16 @@
         <script src="scripts/login.js" defer></script>
     </head>
     <body>
-        <form class="form" action="back/login-back.php">
+        <form class="form" action="back/login-back.php" method="POST">
             <div>
                 <h1>Login</h1>
             </div>
             <div>
-                <input type="text" id="user" name="nUser" placeholder=" ">
+                <input type="text" id="user" name="nUser" placeholder=" "/>
                 <label for="user">Usuário</label>
             </div>
             <div>
-                <input type="password" id="password" name="nPasswd" placeholder=" ">
+                <input type="password" id="password" name="nPasswd" placeholder=" "/>
                 <label for="password">Senha</label>
                 <input type="checkbox" id="passToggle">
                 <label for="passToggle"></label>

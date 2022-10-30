@@ -1,5 +1,11 @@
 <?php
     session_start();
+
+    $activeSession = (!empty($_SESSION['activeSession'])) ? $_SESSION['activeSession'] : false;
+
+    if (!$activeSession) {
+        header('Location: login.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -40,19 +46,19 @@
                 </div>
                 <ul class="links">
                     <li class="underline">
-                        <a href="index.html">
+                        <a href="./">
                             <i class="fa fa-home" aria-hidden="true"></i>
                             <span>Página Inicial</span> 
                         </a>
                     </li>
                     <li class="underline">
-                        <a href="history.html">
+                        <a href="history.php">
                             <i class="fa fa-calendar-o" aria-hidden="true"></i>
                             <span>Histórico Mensal</span> 
                         </a>
                     </li>
                     <li>
-                        <a href="profile.html">
+                        <a href="profile.php">
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i> <span>Perfil</span>
                         </a>
                     </li>
@@ -88,7 +94,7 @@
                         <option value="default" disabled selected id="selected">Selecione o usuário</option>
                         
                         <?php 
-                            require('back/conection.php');
+                            include 'back/connection.php';
 
                             try {
                                 $sql = $pdo->query("SELECT id, nome FROM users");

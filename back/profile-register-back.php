@@ -6,7 +6,7 @@
 		exit;
 	}
 
-    require('conection.php');
+    include 'connection.php';
 
     try {
         $sql = $pdo->query("INSERT INTO users(id, nome, email, passwd, permission) VALUES (default, '" . $_POST['nName'] . "', '" . $_POST['nEmail'] . "', md5('" . $_POST['nPasswd'] . "'), '" . $_POST['nType'] . "')");

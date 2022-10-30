@@ -1,5 +1,11 @@
 <?php
     session_start();
+
+    $activeSession = (!empty($_SESSION['activeSession'])) ? $_SESSION['activeSession'] : false;
+
+    if (!$activeSession) {
+        header('Location: login.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +41,7 @@
                 <div class="img-container">Img</div>
                 <ul class="links">
                     <li class="underline"><i class="fa fa-calendar-o" aria-hidden="true"></i> <a href="./">Página Inicial</a> </li>
-                    <li class="underline"><i class="fa fa-calendar-o" aria-hidden="true"></i> <a href="history.html">Histórico Mensal</a> </li>
+                    <li class="underline"><i class="fa fa-calendar-o" aria-hidden="true"></i> <a href="history.php">Histórico Mensal</a> </li>
                     <li><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span><a href="">Perfil</a></span></li>
                 </ul>
             </nav>

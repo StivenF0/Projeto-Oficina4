@@ -1,4 +1,14 @@
 <!-- Página principal -->
+<?php
+    session_start();
+
+    $activeSession = (!empty($_SESSION['activeSession'])) ? $_SESSION['activeSession'] : false;
+
+    if (!$activeSession) {
+        header('Location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -36,13 +46,13 @@
                 </div>
                 <ul class="links">
                     <li class="underline">
-                        <a href="history.html">
+                        <a href="history.php">
                             <i class="fa fa-calendar-o" aria-hidden="true"></i>
                             <span>Histórico Mensal</span> 
                         </a>
                     </li>
                     <li>
-                        <a href="profile.html">
+                        <a href="profile.php">
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i> <span>Perfil</span>
                         </a>
                     </li>

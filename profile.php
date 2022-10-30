@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    $activeSession = (!empty($_SESSION['activeSession'])) ? $_SESSION['activeSession'] : false;
+
+    if (!$activeSession) {
+        header('Location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,7 +28,7 @@
         <img class="profile" src="./img/profile.png" alt="Foto de perfil do usuário">
         <input class="username" type="text" name="username" value=" Beltrano" id="">
         <a href="#" class="logout"><img src="./img/sair.png" width="32px" alt=""></a>
-        <a href="./index.html">Página principal</a>
+        <a href="./">Página principal</a>
     </div>
 
     <div class="nav_tabs">

@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    $activeSession = (!empty($_SESSION['activeSession'])) ? $_SESSION['activeSession'] : false;
+
+    if (!$activeSession) {
+        header('Location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -32,13 +42,13 @@
                 </div>
                 <ul class="links">
                     <li class="underline">
-                        <a href="index.html">
+                        <a href="./">
                             <i class="fa fa-home" aria-hidden="true"></i>
                             <span>Página Inicial</span> 
                         </a>
                     </li>
                     <li>
-                        <a href="profile.html">
+                        <a href="profile.php">
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i> <span>Perfil</span>
                         </a>
                     </li>
