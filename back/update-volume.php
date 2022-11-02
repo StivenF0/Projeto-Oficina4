@@ -1,13 +1,18 @@
 <?php
-    include "connection.php";
-    
-    $sql = "SELECT * FROM registers WHERE volume != ''";
-    $result = mysqli_query($connection, $sql) or die('Failed to return data');
+    $host = "localhost";
+    $dbname = 'oficinas40_testes';
+    $username = 'oficinas40';
+    $password = 'oficinas40password';
 
-    $registers = array();
-    while ($listRegisters = mysqli_fetch_array($result)) {
-        $registers[] = $listRegisters['volume'];
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+
+    $sql = $pdo->query("SELECT volume FROM registers");
+    $result = $sql->fetchAll(PDO::FETCH_OBJ);
+
+    $lastVolume = NULL;
+    foreach ($result as $register) {
+        $lastVolume = $register->volume;
     }
 
-    print $registers[count($registers) - 1];
+    print $lastVolume;
 ?>
