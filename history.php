@@ -3,9 +3,9 @@
 
     $activeSession = (!empty($_SESSION['activeSession'])) ? $_SESSION['activeSession'] : false;
 
-    if (!$activeSession) {
+    /*if (!$activeSession) {
         header('Location: login.php');
-    }
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -62,9 +62,9 @@
                 <select name="" id="">
                     <option disabled selected value="">Selecione o mês</option>
                     <!-- with database this next part gets different -->
-                    <option value="">Mês 1</option>
-                    <option value="">Mês 2</option>
-                    <option value="">Mês 3</option>
+                    <option value="9">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
                 </select>
             </div>
 
@@ -87,9 +87,19 @@
         <script src="node_modules/chart.js/dist/chart.js"></script>
         <script>
             // Maybe will be easier to get data from database with PHP if scripts are into what will eventually be the '.php' file
+            // This next three lines are here just to create fake values
+            const november = [];
+            const october = [];
+            const september = [];
+
+            const date = new Date();
+            const actual_year = date.getFullYear()
+            
+            const leap_year = ((actual_year % 4 == 0 & actual_year % 100 != 0) || (actual_year % 100 == 0 && actual_year % 400 == 0)) ? true : false
+
             const months = {
                 1: '31',
-                2: '',
+                2: (leap_year) ? '29' : '28',
                 3: '31',
                 4: '30',
                 5: '31',
@@ -104,7 +114,8 @@
 
             const labels = [];
 
-            for (let a = 0; a < 31; a++) {
+            const actual_month = date.getMonth() + 1
+            for (let a = 0; a < months[actual_month]; a++) {
                 labels[a] = (a < 9) ? '0' + (a + 1) : a + 1
             }
 
