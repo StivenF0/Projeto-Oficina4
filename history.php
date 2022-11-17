@@ -3,9 +3,9 @@
 
     $activeSession = (!empty($_SESSION['activeSession'])) ? $_SESSION['activeSession'] : false;
 
-    /*if (!$activeSession) {
+    if (!$activeSession) {
         header('Location: login.php');
-    }*/
+    }
 ?>
 
 <!DOCTYPE html>
@@ -59,12 +59,11 @@
         <main>
             <h1>Histórico Mensal</h1>
             <div class="month-options">
-                <select name="" id="">
-                    <option disabled selected value="">Selecione o mês</option>
+                <select name="" id="idSelMon">
                     <!-- with database this next part gets different -->
                     <option value="9">Setembro</option>
                     <option value="10">Outubro</option>
-                    <option value="11">Novembro</option>
+                    <option value="11" selected>Novembro</option>
                 </select>
             </div>
 
@@ -87,82 +86,86 @@
         <script src="node_modules/chart.js/dist/chart.js"></script>
         <script>
             // Maybe will be easier to get data from database with PHP if scripts are into what will eventually be the '.php' file
-            // This next three lines are here just to create fake values
-            const november = [];
-            const october = [];
-            const september = [];
-
             const date = new Date();
-            const actual_year = date.getFullYear()
+            const actualYear = date.getFullYear() // In the final project this will be the year we get from th registers, maybe even two years according to th period, so the way we'll treat this data will be different
+            const leapYear = ((actualYear % 4 == 0 & actualYear % 100 != 0) || (actualYear % 100 == 0 && actualYear % 400 == 0)) ? true : false
+
+            const months = {1: '31', 2: (leapYear) ? '29' : '28', 3: '31', 4: '30', 5: '31', 6: '30', 7: '31', 8: '31', 9: '30', 10: '31', 11: '30', 12: '31'}
+            const monthsNames = {1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}
             
-            const leap_year = ((actual_year % 4 == 0 & actual_year % 100 != 0) || (actual_year % 100 == 0 && actual_year % 400 == 0)) ? true : false
+            // This next four lines ar here just o create fake values
+            const september = [23, 19, 98, 90, 28, 94, 8, 54, 52, 27, 73, 100, 50, 84, 95, 16, 12, 24, 20, 58, 92, 5, 37, 72, 64, 48, 33, 3, 36, 44];
+            const october = [26, 24, 90, 44, 88, 7, 79, 80, 82, 36, 92, 63, 51, 97, 61, 87, 68, 4, 67, 40, 9, 29, 5, 8, 16, 59, 13, 10, 96, 56, 53];
+            const november = [68, 15, 4, 22, 2, 64, 100, 58, 10, 89, 78, 34, 27, 29, 13, 82, 17, 88, 3, 80, 18, 65, 84, 86, 14, 30, 50, 91, 79, 70];
+            const monthsData = {9: september, 10: october, 11: november}
 
-            const months = {
-                1: '31',
-                2: (leap_year) ? '29' : '28',
-                3: '31',
-                4: '30',
-                5: '31',
-                6: '30',
-                7: '31',
-                8: '31',
-                9: '30',
-                10: '31',
-                11: '30',
-                12: '31'
-            }
+            let myChart = null;
 
-            const labels = [];
+            function drawChart(month) {
+                const labels = [];
 
-            const actual_month = date.getMonth() + 1
-            for (let a = 0; a < months[actual_month]; a++) {
-                labels[a] = (a < 9) ? '0' + (a + 1) : a + 1
-            }
+                for (let a = 0; a < months[month]; a++) {
+                    labels[a] = (a < 9) ? '0' + (a + 1) : a + 1
+                }
 
-            const data = {
-                labels: labels,
-                datasets: [{
-                    label: 'Nível por Dia',
-                    backgroundColor: 'rgb(30, 144, 255)',
-                    borderColor: 'rgb(30, 144, 255)',
-                    data: [0, 10, 5, 2, 20, 30, 45, 70, 90, 100, 20, 60, 55, 56, 88, 92, 90, 95, 80, 76, 12, 50, 70, 70, 70, 87, 84, 93, 98, 100, 99],
-                }]
-            };
+                const data = {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Nível por Dia',
+                        backgroundColor: 'rgb(30, 144, 255)',
+                        borderColor: 'rgb(30, 144, 255)',
+                        data: monthsData[month],
+                    }]
+                };
 
-            const config = {
-                type: 'line',
-                data: data,
-                options: {
-                    animation: {
-                        duration: 2500
-                    },
-
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
+                const config = {
+                    type: 'line',
+                    data: data,
+                    options: {
+                        animation: {
+                            duration: 2500
                         },
 
-                        title: {
-                            display: true,
-                            text: 'Volume médio diário do mês Mês X',
-                            align: 'center',
-                            color: '#1e90ff',
-                            font: {
-                                size: 25,
-                                weight: 500
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            },
+
+                            title: {
+                                display: true,
+                                text: 'Volume médio diário do mês Mês X',
+                                align: 'center',
+                                color: '#1e90ff',
+                                font: {
+                                    size: 25,
+                                    weight: 500
+                                }
+                            },
+
+                            tooltip: {
+                                backgroundColor: '#97cbff',
+                                titleColor: '#000',
+                                bodyColor: '#000'
                             }
-                        },
-
-                        tooltip: {
-                            backgroundColor: '#97cbff',
-                            titleColor: '#000',
-                            bodyColor: '#000'
                         }
                     }
+                };
+                
+                if (myChart != null) {
+                    myChart.destroy()
                 }
-            };
 
-            const myChart = new Chart(document.getElementById('myChart'), config);
+                myChart = new Chart(document.getElementById('myChart'), config);
+            }
+
+            const selectMonth = document.getElementById("idSelMon")
+            let viewMonth = selectMonth.options[selectMonth.selectedIndex].value
+            drawChart(viewMonth)
+
+            selectMonth.addEventListener('change', () => {
+                viewMonth = selectMonth.options[selectMonth.selectedIndex].value
+                drawChart(viewMonth)
+            })
         </script>
     </body>
 </html>
