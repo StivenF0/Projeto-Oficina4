@@ -4,7 +4,7 @@ from datetime import datetime
 
 def register(data):
     """
-    -> register a integer to a table in localhost database
+    -> register an integer to a table in localhost database
     :param data: string to be registered
     :return: no return
     """
