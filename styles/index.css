@@ -95,7 +95,7 @@ main .tank-graphic .percent::after {
     content: "%";
     font-size: 0.7em;
     font-weight: 800;
-    color: #9f9f9f;
+    color: #3f3f3f;
 }
 
 main .buttons {
