@@ -16,7 +16,7 @@ $(document).ready(function(){
         number = $('#div-refresh').html();
         let progressValue = 0
         let progressValueEnd = Number(number) //Value in percent
-        let totalCapacity = 6000 //Total capacity of the container in liters
+        let totalCapacity = 10 //Total capacity of the container in liters
 
         if (number != oldNumber) {
             progress = setInterval(() => {
@@ -47,3 +47,4 @@ function turnOn() {
 function turnOff() {
     jQuery.post('back/write-data.php', {data: 0})
 }
+

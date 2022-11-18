@@ -11,7 +11,7 @@
 
         for ($a = 1; $a <= 20; $a++) {
             if (file_exists("COM" . $a)) {
-                $arduinoConnection = fopen("COM$a", "w");
+                $arduinoConnection = fopen("COM4", "w");
                 fwrite($arduinoConnection, $action);
                 fclose($arduinoConnection);
             }

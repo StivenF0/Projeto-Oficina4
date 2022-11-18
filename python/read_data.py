@@ -26,6 +26,5 @@ while True:
         int_sensor_value = round(float(sensor_value))
         print(int_sensor_value)
         database.register(int_sensor_value)
-    if serial_inst.isOpen():
         serial_inst.close()
-    sleep(3)
+    sleep(2)

@@ -25,6 +25,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <!-- JS SCRIPTS -->
+        <script defer>
+            const nome = "clayton"
+        </script>
         <script src="scripts/index.js" defer></script>
     </head>
 
@@ -71,7 +74,7 @@
             </div>
         </main>
 
-        <div id="div-refresh" style="display: none;"></div>
+        <div id="div-refresh" style="display: block;"></div>
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
     </body>
