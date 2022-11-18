@@ -5,7 +5,7 @@
     $activeSession = (!empty($_SESSION['activeSession'])) ? $_SESSION['activeSession'] : false;
 
     if (!$activeSession) {
-        header('Location: login.php');
+        // header('Location: login.php');
     }
 ?>
 
@@ -61,8 +61,11 @@
         </header>
         <main>
             <div class="row">
-                <div class="circle-graphic" id="progressBar">
-                    <div class="value" id="progressValue"></div>
+                <div class="tank-graphic">
+                    <div class="waves-wrapper">
+                        <div class="waves" id="progressBar"></div>
+                    </div>
+                    <div class="percent" id="progressValue">50</div>
                 </div>
                 
                 <div class="buttons">
