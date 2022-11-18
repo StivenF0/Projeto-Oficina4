@@ -9,17 +9,18 @@ main {
     flex-direction: column;
     padding-top: 30px;
     padding-left: 20px;
+    padding-bottom: 40px;
     overflow: hidden;
 }
 
 main .row {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: center;
 }
 
 main > * {
-    transform: translateY(-5px);
+    transform: translateY(12px);
 }
 
 main .tank-graphic {
@@ -139,7 +140,6 @@ main .buttons button {
     transition: 200ms;
 }
 
-main .buttons button:hover,
 main .btn-on-off button:hover {
     background-color: var(--secondary-color);
     color: cornflowerblue;
@@ -151,6 +151,7 @@ main .capacity {
 
 main .capacity .info table {
     width: 39vw;
+    table-layout: fixed;
     /* border-collapse: collapse; */
 }
 
@@ -179,13 +180,6 @@ main .capacity .info table tbody td {
     }
     main .row {
         flex-direction: column;
-    }
-    main .row .buttons {
-        width: 200px;
-        margin: 15px 0 0 0;
-    }
-    main .row .buttons button {
-        height: 35px;
     }
 }
 

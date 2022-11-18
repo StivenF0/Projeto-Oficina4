@@ -67,11 +67,6 @@
                     </div>
                     <div class="percent" id="progressValue">50</div>
                 </div>
-                
-                <div class="buttons">
-                    <button>Atualizar</button>
-                    <button>Imprimir</button>
-                </div>
             </div>
             <div class="row capacity">
                 <div class="info">
