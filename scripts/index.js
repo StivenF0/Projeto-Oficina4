@@ -1,4 +1,3 @@
-
 const progressBar = document.getElementById('progressBar')
 const value = document.getElementById('progressValue')
 const elementCapacity = document.getElementById('totalCapacity')

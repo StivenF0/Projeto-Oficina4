@@ -10,5 +10,4 @@
     }
 
     print $registers[count($registers) - 1];
-    // print 0;
 ?>
